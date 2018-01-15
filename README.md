@@ -9,3 +9,38 @@ Students will need to determine what kind of information should be exposed as a 
 3: https://two.js.org/ 
 4: https://threejs.org/ 
 
+
+## Setup of dev tools
+
+### 1. Node.js version manager 
+
+For windows users : https://github.com/marcelklehr/nodist/releases
+
+For Linux users : https://github.com/nodenv/nodenv#installation
+
+For Mac users : https://github.com/nodenv/nodenv#homebrew-on-mac-os-x
+
+### 2. Install of the last LTS version of node.js
+On terminal (PowerShell on windows)
+```
+nodist + 8.9.4
+```
+
+### 3. Vue-cli
+On terminal (PowerShell on windows)
+```
+npm install -g vue-cli
+```
+
+### 4. On the web-app folder
+On terminal (PowerShell on windows)
+```
+npm install
+```
+
+## To run app 
+On terminal (PowerShell on windows)
+```
+npm run dev # on web-app folder
+```
+App is available on url http://localhost:8080
