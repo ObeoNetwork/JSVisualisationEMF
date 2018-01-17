@@ -3,9 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import mixins from './mixins'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-import bootstrap from 'bootstrap'
+
+Vue.mixin(mixins);
 
 Vue.config.productionTip = false
 
