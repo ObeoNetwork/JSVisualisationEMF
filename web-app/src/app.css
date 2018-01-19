@@ -1,0 +1,21 @@
+.app-header {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.hidden-input {
+  width: 0.1px;
+  height: 0.1px;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.chart-wrapper {
+  border: 1px solid #ced4da;
+  border-radius: .25rem; 
+}
+
+.chart {
+  width: 100%;
+  height: 420px;
+}
