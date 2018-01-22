@@ -66,7 +66,7 @@ export default {
               label: (tooltipItem, data) => {
                 const entityIndex = tooltipItem.datasetIndex;
                 const itemIndex = tooltipItem.index;
-                return data.datasets[entityIndex].data[itemIndex].title;
+                return data.datasets[entityIndex].data[itemIndex].label;
               }
             }
           }
