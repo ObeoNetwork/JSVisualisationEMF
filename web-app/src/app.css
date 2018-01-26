@@ -10,9 +10,14 @@
   visibility: hidden;
 }
 
+.table-wrapper,
 .chart-wrapper {
   border: 1px solid #ced4da;
   border-radius: .25rem; 
+}
+
+.table-wrapper .table {
+  margin-top: -1px;
 }
 
 .chart {
