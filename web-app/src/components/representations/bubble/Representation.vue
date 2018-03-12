@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="representation">
     <form class="form">
       <input type="text" class="form-control my-1" placeholder="Insérez votre modèle XML" @click="openFileInput()">
       <input type="file" class="hidden-input" id="xml-file" @change="processFileInput()">
@@ -13,7 +13,7 @@
   </div>
 </template>
 
-<script src="./home.js"></script>
+<script src="./representation.js"></script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style src="./home.css" scoped></style>
+<style src="./representation.css" scoped></style>

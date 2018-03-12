@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/home/Home.vue'
 import Ecore from '@/components/ecore/Ecore.vue'
+import MappingBubble from '@/components/mappings/bubble/Mapping.vue'
+import RepresentationBubble from '@/components/representations/bubble/Representation.vue'
 
 Vue.use(Router)
 
@@ -10,12 +11,22 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Ecore
     },
     {
       path: '/ecore',
       name: 'ecore',
       component: Ecore
+    },
+    {
+      path: '/mapping-bubble',
+      name: 'mapping-bubble',
+      component: MappingBubble
+    },
+    {
+      path: '/representation-bubble',
+      name: 'representation-bubble',
+      component: RepresentationBubble
     }
   ]
 })

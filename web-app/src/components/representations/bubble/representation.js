@@ -2,7 +2,7 @@ import { Chart } from 'chart.js'
 
 export default {
 
-  name: 'home',
+  name: 'representation-bubble',
 
   data() {
     return {
