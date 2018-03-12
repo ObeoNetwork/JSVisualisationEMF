@@ -1,4 +1,3 @@
-import { Chart } from 'chart.js'
 
 export default {
 
@@ -24,6 +23,8 @@ export default {
     this.fileReader.onload = (e) => {
       const ecoreData = this.fileReader.result;
       this.metaModelData = this.ecoreConverter.ecoreToJsData(ecoreData);
+      localStorage.setItem('obeo-jsvemf_ecore-name', JSON.stringify(this.metaModelData.name));
+      localStorage.setItem('obeo-jsvemf_entities', JSON.stringify(this.metaModelData.entities));
     }
     this.ecoreInput = document.querySelector('#ecore-file');
   },

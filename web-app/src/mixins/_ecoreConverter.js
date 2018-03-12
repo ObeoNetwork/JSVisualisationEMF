@@ -5,13 +5,6 @@ export default {
   ecoreToJsData: function (ecoreData) {
 
     let entities = [];
-    const colors = [
-      '#f9eee6',
-      '#b0e0e6', 
-      '#ffe5fa', 
-      '#ddf7be'
-    ];
-    const nbColors = colors.length;
 
     const dom = document.createElement('div');
     dom.innerHTML = ecoreData;
@@ -41,7 +34,7 @@ export default {
           name: name,
           label: label, 
           attrs: attrs, 
-          backgroundColor: colors[i % nbColors],
+          backgroundColor: '',
           data: [],
           superClass: superType ? superType : null
         });
