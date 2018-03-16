@@ -41,7 +41,7 @@ export default {
       var ctx = document.querySelector('#chart').getContext('2d');
       var barLabel = [];
       var barData = [];
-      chartData.forEach(function(data, index){
+      chartData.forEach(function(data, index){ // Récupération des données pour le graphe
         console.log(data);
         barLabel.push(data.label);
         barData.push(data.data.length);
