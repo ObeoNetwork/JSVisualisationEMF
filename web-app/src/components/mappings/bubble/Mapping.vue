@@ -1,19 +1,21 @@
 <template>
   <div class="mapping">
+    <button type="button" class="btn btn-primary" style="float: right;" @click="saveMetamodel">Suivant</button>
+
   	<table class="table">
 	    <tr>
 	      <th scope="col"> # </th>
 	      <th> Entity Name</th>
 	      <th> Color </th>
 	    </tr>
-      <tr v-for="metamodelItem in metamodel" :key="metamodelItem.label">
-        <td scope="row"> {{  }} </td>
-        <td> {{ metamodelItem.name }}</td>
+      <tr v-for="(metamodelItem, index) in metamodel" :key="metamodelItem.label">
+        <td scope="row"> {{ index }} </td>
+        <td :style='{ color: metamodelItem.backgroundColor}'> {{ metamodelItem.name }}</td>
         <td>
-        	<select>
+        	<select v-model="metamodelItem.backgroundColor" @change="showMetamodel">
         		<option>Aucune couleur</option>
-        		<option v-for='color in colors'>
-        			{{ color.name}}
+        		<option :value="color.value" v-for='color in colors'>
+        			{{ color.name }}
         		</option>
         	</select>
         </td>
