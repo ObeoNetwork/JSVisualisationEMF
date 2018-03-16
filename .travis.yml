@@ -5,4 +5,4 @@ node_js:
 script: bash ci.sh
 
 after_success:
-  - surge --project ./web-app/dist/ --domain jsvisualisationemf.obeonetwork.surge.sh
+  - surge --project ./dist/ --domain jsvisualisationemf.obeonetwork.surge.sh
