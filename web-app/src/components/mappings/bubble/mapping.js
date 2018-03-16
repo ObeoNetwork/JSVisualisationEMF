@@ -1,8 +1,3 @@
-function getRandomArbitrary(min, max) {
-    return parseInt(Math.random() * (max - min) + min);
-}
-
-
 export default {
 
   name: 'mapping-bubble',
@@ -26,21 +21,18 @@ export default {
 
   mounted() {
     this.metamodel = JSON.parse((localStorage.getItem('obeo-jsvemf_entities') || '[]'));
-    const self = this;
-    this.metamodel.forEach(function(metaM){
-      const randomIndex = getRandomArbitrary(0, self.colors.length);
-      console.log(randomIndex);
-      metaM.backgroundColor = self.colors[randomIndex].value;
+    this.metamodel.forEach((metaM) => {
+      const randomIndex = this.getRandomArbitrary(0, this.colors.length);
+      metaM.backgroundColor = this.colors[randomIndex].value;
     });
   },
 
   methods: {
-    showMetamodel(){
-      console.log(this.metamodel);
+    getRandomArbitrary(min, max) {
+      return parseInt(Math.random() * (max - min) + min);
     },
-
     saveMetamodel(){
-      localStorage.setItem('obeo-jsvemf_entities', JSON.stringify(this.metamodel))
+      localStorage.setItem('obeo-jsvemf_entities', JSON.stringify(this.metamodel));
     }
   }
 }

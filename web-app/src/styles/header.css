@@ -1,0 +1,15 @@
+.app-header {
+  margin-top: 30px;
+}
+
+.app-logo {
+  position: relative;
+  top: -0.4rem;
+  width: 160px;
+}
+
+.app-title {
+  display: inline-block;
+  padding-left: 24px;
+  font-size: 1.6rem;
+}
