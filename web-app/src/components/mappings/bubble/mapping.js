@@ -4,7 +4,7 @@ export default {
 
   data() {
     return {
-      metamodel: [],
+      metamodels: [],
       colors: [
         { name: "Black", value: "#000000"},
         { name: "Blue", value: "#0000FF"},
@@ -20,11 +20,17 @@ export default {
   },
 
   mounted() {
-    this.metamodel = JSON.parse((localStorage.getItem('obeo-jsvemf_entities') || '[]'));
-    this.metamodel.forEach((metaM) => {
-      const randomIndex = this.getRandomArbitrary(0, this.colors.length);
-      metaM.backgroundColor = this.colors[randomIndex].value;
+    this.metamodels = JSON.parse((localStorage.getItem('obeo-jsvemf_entities') || '[]'));
+    this.metamodels.forEach((metaM) => {
+      const colorLength = this.colors.length;
+
+      const backgroundIndex = this.getRandomArbitrary(0, colorLength);
+      metaM.backgroundColor = metaM.backgroundColor || this.colors[backgroundIndex].value;
+
+      const borderIndex = this.getRandomArbitrary(0, colorLength);
+      metaM.borderColor = metaM.borderColor || this.colors[borderIndex].value;
     });
+    this.saveMetamodel();
   },
 
   methods: {

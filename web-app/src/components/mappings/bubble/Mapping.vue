@@ -5,10 +5,11 @@
 	      <th scope="col"> # </th>
 	      <th> Entity Name</th>
 	      <th> Color </th>
+        <th> Border color </th>
 	    </tr>
-      <tr v-for="(metamodelItem, index) in metamodel" :key="metamodelItem.label">
+      <tr v-for="(metamodelItem, index) in metamodels" :key="metamodelItem.label">
         <td scope="row"> {{ index }} </td>
-        <td :style='{ color: metamodelItem.backgroundColor}'> {{ metamodelItem.name }}</td>
+        <td> {{ metamodelItem.name }}</td>
         <td>
         	<select v-model="metamodelItem.backgroundColor" @change="saveMetamodel()">
         		<option>Aucune couleur</option>
@@ -16,6 +17,17 @@
         			{{ color.name }}
         		</option>
         	</select>
+          <div class="colorDisplayer" :style="{ backgroundColor: metamodelItem.backgroundColor }"></div>
+        </td>
+
+        <td>
+          <select v-model="metamodelItem.borderColor" @change="saveMetamodel()">
+            <option>Aucune couleur</option>
+            <option :value="color.value" v-for='color in colors'>
+              {{ color.name }}
+            </option>
+          </select>
+          <div class="colorDisplayer" :style="{ backgroundColor: metamodelItem.borderColor }"></div>
         </td>
       </tr>
     </table>

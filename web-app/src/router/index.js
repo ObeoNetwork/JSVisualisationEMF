@@ -4,6 +4,8 @@ import Ecore from '@/components/ecore/Ecore.vue'
 import MappingBubble from '@/components/mappings/bubble/Mapping.vue'
 import RepresentationBubble from '@/components/representations/bubble/Representation.vue'
 import RepresentationBar from '@/components/representations/bar/Representation.vue'
+import RepresentationGraph from '@/components/representations/graph/graph.vue'
+
 
 Vue.use(Router)
 
@@ -34,6 +36,11 @@ export default new Router({
       path: '/representation-bar',
       name: 'representation-bar',
       component: RepresentationBar
+    },
+        {
+      path: '/representation-graph',
+      name: 'representation-graph',
+      component: RepresentationGraph
     }
   ]
 })
