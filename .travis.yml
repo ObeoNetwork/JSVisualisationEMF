@@ -1,5 +1,8 @@
 language: node_js
 node_js:
-  - '8.9.4'
+  - '8.10.10'
 
 script: bash ci.sh
+
+after_success:
+  - surge --project ./web-app/dist/ --domain jsvisualisationemf.obeonetwork.surge.sh
