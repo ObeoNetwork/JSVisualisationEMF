@@ -6,6 +6,7 @@ import router from './router'
 import mixins from './mixins'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min.js'
 
 Vue.mixin(mixins);
 
