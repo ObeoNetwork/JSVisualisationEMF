@@ -11,7 +11,8 @@ export default {
         entities: []
       },
       ecoreInput: {},
-      message: ''
+      message: '',
+      ecoreLoaded: false
     }
   },
 
@@ -25,6 +26,7 @@ export default {
       this.metaModelData = this.ecoreConverter.ecoreToJsData(ecoreData);
       localStorage.setItem('obeo-jsvemf_ecore-name', JSON.stringify(this.metaModelData.name));
       localStorage.setItem('obeo-jsvemf_entities', JSON.stringify(this.metaModelData.entities));
+      this.ecoreLoaded = true;
     }
     this.ecoreInput = document.querySelector('#ecore-file');
   },

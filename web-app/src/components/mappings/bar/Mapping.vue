@@ -41,7 +41,7 @@
         Changer de représentation
       </button>
        &nbsp; 
-      <button type="button" class="btn btn-info" @click="$router.push('/representation-bubble')">
+      <button type="button" class="btn btn-info" @click="$router.push('/representation-bar')">
         Afficher la représentation
       </button>
     </div>

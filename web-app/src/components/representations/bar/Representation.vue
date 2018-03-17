@@ -10,6 +10,20 @@
     <div class="mt-2">
       <p class="text-center">{{ message }}</p>
     </div>
+    
+    <div class="mt-4 mb-4 text-right">
+      <button type="button" class="btn btn-muted" @click="$router.push('/ecore')">
+        Changer de meta-modèle
+      </button>
+       &nbsp; 
+      <button type="button" class="btn btn-muted" @click="$router.push('/mapping-bar')">
+        Changer la configuration
+      </button>
+       &nbsp; 
+      <button type="button" class="btn btn-muted" data-toggle="modal" data-target="#representation-selector-modal">
+        Changer de représentation
+      </button>
+    </div>
   </div>
 </template>
 

@@ -5,6 +5,7 @@
         placeholder="Insérez votre meta-modèle ecore" @click="openFileInput()">
       <input type="file" class="hidden-input" id="ecore-file" @change="processFileInput()">
     </form>
+
     <div class="table-wrapper">
       <table class="table">
         <tr>
@@ -21,8 +22,15 @@
         </tr>
       </table>
     </div>
+
     <div class="mt-2">
       <p class="text-center">{{ message }}</p>
+    </div>
+    
+    <div v-if="ecoreLoaded" class="mt-4 mb-4 text-right">
+      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#representation-selector-modal">
+        Choisir une représentation
+      </button>
     </div>
   </div>
 </template>

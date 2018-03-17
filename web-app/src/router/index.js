@@ -2,9 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Ecore from '@/components/ecore/Ecore.vue'
 import MappingBubble from '@/components/mappings/bubble/Mapping.vue'
+import MappingBar from '@/components/mappings/bar/Mapping.vue'
 import RepresentationBubble from '@/components/representations/bubble/Representation.vue'
 import RepresentationBar from '@/components/representations/bar/Representation.vue'
-import RepresentationGraph from '@/components/representations/graph/graph.vue'
+import RepresentationGraph from '@/components/representations/graph/Representation.vue'
 
 
 Vue.use(Router)
@@ -26,6 +27,11 @@ export default new Router({
       path: '/mapping-bubble',
       name: 'mapping-bubble',
       component: MappingBubble
+    },
+    {
+      path: '/mapping-bar',
+      name: 'mapping-bar',
+      component: MappingBar
     },
     {
       path: '/representation-bubble',

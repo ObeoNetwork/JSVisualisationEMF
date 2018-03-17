@@ -4,3 +4,8 @@
   overflow: hidden;
   visibility: hidden;
 }
+
+a,
+button {
+  outline: none !important;
+}

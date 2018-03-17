@@ -19,8 +19,9 @@ export default {
 
   mounted() {
     this.fileReader.onload = (e) => {
+      const entities = JSON.parse((localStorage.getItem('obeo-jsvemf_entities') || '[]'));
       const xmlData = this.fileReader.result;
-      this.chartData = this.xmlConverter.xmlToBubbleData(xmlData);
+      this.chartData = this.xmlConverter.xmlToBubbleData(entities, xmlData);
       this.loadChart(this.chartData);
     }
     this.xmlInput = document.querySelector('#xml-file');
@@ -41,9 +42,11 @@ export default {
       var ctx = document.querySelector('#chart').getContext('2d');
       var barLabel = [];
       var barData = [];
-      chartData.forEach(function(data, index){ // Récupération des données pour le graphe
+      var barColors = [];
+      chartData.forEach((data, index) => { // Récupération des données pour le graphe
         barLabel.push(data.label);
         barData.push(data.data.length);
+        barColors.push(data.backgroundColor);
       });
 
       var myChart = new Chart(ctx, {
@@ -52,7 +55,7 @@ export default {
           labels: barLabel,
           datasets: [
             {
-              backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9"],
+              backgroundColor: barColors,
               data: barData
             }
           ]

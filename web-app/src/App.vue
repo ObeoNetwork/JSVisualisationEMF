@@ -25,13 +25,21 @@
       </div>
 
       <router-view/>
+
+      <representation-selector/>
     </div>
   </div>
 </template>
 
 <script>
+import RepresentationSelector from '@/components/representation-selector/Representation-selector.vue'
+
 export default {
   name: 'App',
+
+  components: {
+    'representation-selector': RepresentationSelector
+  },
 
   methods: {
     onPage(pageName) {
