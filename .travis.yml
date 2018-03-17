@@ -2,7 +2,8 @@ language: node_js
 node_js:
   - '8.10.0'
 
-script: bash ci.sh
-
-after_success:
-  - surge --project /home/travis/build/ObeoNetwork/JSVisualisationEMF/web-app/dist/ --domain jsvisualisationemf.obeonetwork.surge.sh
+script: 
+  - cd web-app/
+  - npm install
+  - npm run build
+  - ./node_modules/surge/lib/cli.js --project ./dist/ --domain jsvisualisationemf.obeonetwork.surge.sh
