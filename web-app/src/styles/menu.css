@@ -8,22 +8,11 @@
 	text-decoration: none;
 }
 
-.menu-container {
-	margin-top: 20px;
-	margin-bottom: 10px;
-}
-
 .menu-item {
 	flex: 1;
 	padding: .5rem 20px;
 	text-align: center;
 	color:#000000;
-	cursor: pointer;
-}
-
-.menu-item:hover {
-	color: #37c1d6;
-	transition: color ease .5s;
 }
 
 .menu-item.active {

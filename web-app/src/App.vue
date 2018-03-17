@@ -7,18 +7,18 @@
       </div>
     </header>
 	
-    <div class="container mt-4">
-      <div class="menu-container">
+    <div class="container">
+      <div class="menu-container mt-3 mb-4">
         <nav class="menu">
-          <span class="menu-item" :class="{ active: (onPage('ecore')) }" @click="ecoreClick()"> 
+          <span class="menu-item" :class="{ active: (onPage('ecore')) }"> 
             Meta-modèle 
           </span>
           <span class="menu-arrow"> &rang; </span>
-          <span class="menu-item" :class="{ active: (onPage('mapping')) }" @click="mappingClick()"> 
+          <span class="menu-item" :class="{ active: (onPage('mapping')) }"> 
             Configuration 
           </span>
           <span class="menu-arrow"> &rang; </span>
-          <span class="menu-item" :class="{ active: (onPage('representation')) }" @click="representationClick()"> 
+          <span class="menu-item" :class="{ active: (onPage('representation')) }"> 
             Représentation 
           </span>
         </nav>
@@ -45,22 +45,6 @@ export default {
         case 'representation':
           return location.pathname.includes('representation');
           break;
-      }
-    },
-    ecoreClick() {
-      this.$router.push('/ecore');
-    },
-    mappingClick() {
-      if (location.pathname == '/' || location.pathname == '/ecore') {
-        this.$router.push('/mapping-bubble');
-      }
-      if (location.pathname.includes('representation')) {
-        this.$router.back();
-      }
-    },
-    representationClick() {
-      if (location.pathname.includes('mapping')) {
-        this.$router.push(location.pathname.replace('mapping', 'representation'));
       }
     }
   }
