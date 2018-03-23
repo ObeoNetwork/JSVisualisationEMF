@@ -2,7 +2,7 @@ import vis from 'vis';
 
 export default {
 
-  name: 'representation-bubble',
+  name: 'representation-graph',
 
   data() {
     return {
@@ -21,7 +21,7 @@ export default {
      this.fileReader.onload = (e) => {
       const entities = JSON.parse((localStorage.getItem('obeo-jsvemf_entities') || '[]'));
       const xmlData = this.fileReader.result;
-      this.chartData = this.xmlConverter.xmlToBubbleData(entities, xmlData);
+      this.chartData = this.xmlConverter.xmlToToChartData(entities, xmlData);
       this.loadChart(this.chartData);
     }
     this.xmlInput = document.querySelector('#xml-file');
@@ -40,26 +40,18 @@ export default {
     },
 
     loadChart(chartData) {
-
-      console.log(chartData);
       chartData.forEach(function(modelItem, index){
         modelItem.id = index;
       });
+
       var container = document.getElementById('graph');
       var nodes = new vis.DataSet(chartData);
 
-
       var data = {
         nodes
-        
       };
 
-      console.log(nodes);
-
       var net = new vis.Network(container, data, {});
-
-      console.log(net);
-
     }
   }
 }

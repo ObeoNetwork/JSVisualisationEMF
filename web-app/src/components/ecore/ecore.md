@@ -1,9 +1,10 @@
-openFileInput function :
+# openFileInput 
 @params :
 @returns :
-@description : Permet d'ouvrir la pop-up de sélection du fichier (xml, ecore...)
+@description : Permet d'ouvrir la pop-up de sélection du fichier ecore 
 
-processFileInput function :
+# processFileInput 
 @params : 
 @returns :
-@description : Transforme le fichier sélectionné en données compréhensible en JS
+@description : Transforme le fichier sélectionné en données JavaScript via 
+la fonction ecoreToJsData de _ecoreConverter

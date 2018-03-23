@@ -1,6 +1,6 @@
 export default {
   
-  xmlToBubbleData: function(ecoreEntities, xmlData) {
+  xmlToToChartData: function(ecoreEntities, xmlData) {
 
     const dom = document.createElement('div');
     dom.innerHTML = xmlData;

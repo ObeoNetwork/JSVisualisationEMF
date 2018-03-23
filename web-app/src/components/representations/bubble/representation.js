@@ -21,7 +21,7 @@ export default {
     this.fileReader.onload = (e) => {
       const entities = JSON.parse((localStorage.getItem('obeo-jsvemf_entities') || '[]'));
       const xmlData = this.fileReader.result;
-      this.chartData = this.xmlConverter.xmlToBubbleData(entities, xmlData);
+      this.chartData = this.xmlConverter.xmlToToChartData(entities, xmlData);
       this.loadChart(this.chartData);
     }
     this.xmlInput = document.querySelector('#xml-file');
